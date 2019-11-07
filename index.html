@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,30 +8,61 @@
   <title>Form Demo</title>
   <style>
     form {
-      background-color: aliceblue;
+      margin: 0 auto;
+      width: 100%;
+      /* Form outline */
+      padding: 12px;
+      border: 1px solid #CCC;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-top: 6px;
+      margin-bottom: 16px;
     }
+    input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+fieldset{
+  background-color: rgb(119, 127, 133);
+}
+legend{
+  border:1px solid gray;
+  padding: 1rem 1rem;
+  background-color: white;
+}
+
+  </style>
+
   </style>
 </head>
+
 <body>
   <form name="contact" method="POST" data-netlify="true">
-  <p>
-    <label>Your Name: <input type="text" name="name" /></label>
-  </p>
-  <p>
-    <label>Your Email: <input type="email" name="email" /></label>
-  </p>
-  <p>
-    <label>Your Role: <select name="role[]" multiple>
-      <option value="leader">Leader</option>
-      <option value="follower">Follower</option>
-    </select></label>
-  </p>
-  <p>
-    <label>Message: <textarea name="message"></textarea></label>
-  </p>
-  <p>
-    <button type="submit">Send</button>
-  </p>
-</form>
+    <p>
+      <fieldset>
+        <legend>Please feel free to send a message</legend>
+        <label>Email:<br> <input type="email" name="name" /></label>
+    </p>
+    <p>
+      <label>Message:<br><textarea name="message"></textarea></label>
+    </p>
+    <p>
+      <fieldset>
+        <legend>Would you like a reply?</legend>
+        <input type="radio" name="reply" value="yes">Yes<br>
+        <input type="radio" name="reply" value="No">No<br>
+        </select></label>
+      </fieldset>
+      <button type="submit">Send Message</button>
+      </fieldset>
+    </p>
+  </form>
 </body>
+
 </html>
